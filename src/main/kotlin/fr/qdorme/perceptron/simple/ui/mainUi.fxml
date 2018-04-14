@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.qdorme.perceptron.simple.ui.MainController">
+   <children>
+      <VBox layoutX="3.0" layoutY="3.0" prefHeight="394.0" prefWidth="594.0">
+         <children>
+            <ButtonBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="594.0">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <buttons>
+                  <RadioButton fx:id="greenChoice" mnemonicParsing="false" onAction="#selectColor" selected="true" text="Green" textOverrun="CLIP">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="color" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="redChoice" mnemonicParsing="false" onAction="#selectColor" text="Red" toggleGroup="$color" />
+               </buttons>
+            </ButtonBar>
+            <Canvas fx:id="myCanvas" height="314.0" onMouseClicked="#addData" width="594.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></Canvas>
+            <ButtonBar prefHeight="40.0" prefWidth="594.0">
+              <buttons>
+                <Button mnemonicParsing="false" onAction="#runPercepton" text="Run" />
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clear" text="Clear" />
+              </buttons>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
