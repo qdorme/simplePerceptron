@@ -12,6 +12,7 @@ class NeuronalNetwork{
         while(error > 0.2){
             increment++
             error = 0.0
+            datas.shuffle()
             datas.forEach {
                 val e : Double = it.color - perceptron.activatedResult(mutableListOf(it.x,it.y))
                 error += Math.abs(e)
